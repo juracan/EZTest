@@ -20,4 +20,8 @@ export class HomeComponent implements OnInit {
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.zoomUrl);
   }
 
+  tabZoom() {
+    window.open(this.zoomUrl, '_blank');
+  }
+
 }
