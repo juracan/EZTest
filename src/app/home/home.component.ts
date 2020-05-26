@@ -8,7 +8,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
 
-  zoomUrl = 'https://zoom.us/j/98209763691?pwd=VG80TFpWK05zYzQxdnhIbHh4UEdqQT09';
+  zoomUrl = 'https://zoom.us/j/99469935741?pwd=c2R2R01NQmNMcU5OeW1mOUpuempYZz09';
   urlSafe: SafeResourceUrl;
   output1 = '';
   output2 = '';
