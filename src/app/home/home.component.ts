@@ -52,7 +52,8 @@ export class HomeComponent implements OnInit {
             check = true;
         }
     };
-    x(navigator.userAgent || navigator.vendor || window.opera);
+
+    x(navigator.userAgent || navigator.vendor || window.hasOwnProperty('opera'));
     return check;
   }
 
