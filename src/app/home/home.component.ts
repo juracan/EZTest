@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit {
 
   zoomUrl = 'https://zoom.us/j/99469935741?pwd=c2R2R01NQmNMcU5OeW1mOUpuempYZz09';
   urlSafe: SafeResourceUrl;
+  output1 = '';
+  output2 = '';
   openNewWindow = false;
 
   constructor(public sanitizer: DomSanitizer) { }
@@ -21,14 +23,22 @@ export class HomeComponent implements OnInit {
     if (iOSPlatform || iOSUserAgent || iPad) {
       this.openNewWindow = true;
     }
+
   }
 
   launchZoom() {
+    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.zoomUrl);
+  }
+
+  tabZoom() {
+    window.open(this.zoomUrl, '_blank');
+  }
+
+  launchZoomCombined() {
     if (this.openNewWindow){
       window.open(this.zoomUrl, '_blank');
     } else {
       this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.zoomUrl);
     }
   }
-
 }
