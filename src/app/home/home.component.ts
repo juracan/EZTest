@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
 
     iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     alert('iOS = ' + iOS);
-    this.output1 = 'Platform:' + navigator.userAgent + '<br/> MSStream' + window.MSStream.toString();
+    this.output2 = 'Platform:' + navigator.userAgent + '<br/> MSStream' + window.MSStream.toString();
 
   }
 
