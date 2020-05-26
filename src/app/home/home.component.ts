@@ -24,6 +24,10 @@ export class HomeComponent implements OnInit {
     alert('iOS = ' + iOS);
     this.output2 = 'Platform:' + navigator.userAgent + '<br/> MSStream' + window.MSStream;
 
+    if (navigator.userAgent.match(/Mac/) && navigator.maxTouchPoints && navigator.maxTouchPoints > 2) {
+      alert('IPAD');
+    }
+
   }
 
   launchZoom() {
