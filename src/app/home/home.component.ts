@@ -14,7 +14,10 @@ export class HomeComponent implements OnInit {
   constructor(public sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+    let iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+    alert('iOS = ' + iOS);
+
+    iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     alert('iOS = ' + iOS);
   }
 
