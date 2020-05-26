@@ -10,15 +10,20 @@ export class HomeComponent implements OnInit {
 
   zoomUrl = 'https://zoom.us/j/98209763691?pwd=VG80TFpWK05zYzQxdnhIbHh4UEdqQT09';
   urlSafe: SafeResourceUrl;
+  output1 = '';
+  output2 = '';
 
   constructor(public sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     let iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
     alert('iOS = ' + iOS);
+    this.output1 = 'Platform:' + navigator.platform;
 
     iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     alert('iOS = ' + iOS);
+    this.output1 = 'Platform:' + navigator.userAgent + '<br/> MSStream' + window.MSStream.toString();
+
   }
 
   launchZoom() {
